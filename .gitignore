@@ -1,0 +1,8 @@
+vim/.vim/colors/*
+vim/.vim/bundle/**
+vim/.vim/backups/*
+vim/.vim/autoload/*
+vim/.vim/.vimundo/*
+
+tmux/.tmux/plugins/*
+tmux/.tmux/resurrect/*
