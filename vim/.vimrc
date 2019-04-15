@@ -12,7 +12,14 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
-set termguicolors
+let mapleader = ","
+
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -25,8 +32,8 @@ syntax on
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+if filereadable(expand("~/.vim/settings/extensions.vim"))
+  source ~/.vim/settings/extensions.vim
 endif
 au BufNewFile,BufRead *.vundle set filetype=vim
 
@@ -49,6 +56,9 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
+" Enable folding
+set foldmethod=syntax
+set foldlevel=99
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
@@ -65,7 +75,6 @@ set sidescrolloff=15
 set sidescroll=1
 
 
-
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
@@ -80,8 +89,25 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" ================ COC ==============================
+" Some server have issues with backup files, see #649
+
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
 
 " Sourcing gui
 so ~/.vim/settings/gui.vim
-so ~/.vim/settings/fzf.vim
 so ~/.vim/settings/keymap.vim
+so ~/.vim/settings/coc-settings.vim
