@@ -108,6 +108,7 @@ set shortmess+=c
 set signcolumn=yes
 
 " Sourcing gui
+"
 so ~/.vim/settings/gui.vim
 so ~/.vim/settings/keymap.vim
 so ~/.vim/settings/coc-settings.vim
