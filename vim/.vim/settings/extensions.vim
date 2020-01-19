@@ -14,19 +14,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'majutsushi/tagbar'
 
 Plug 'itchyny/lightline.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-unimpaired'
 
 Plug 'junegunn/fzf.vim'
 
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'danishprakash/vim-yami'
 Plug 'pgdouyon/vim-yin-yang'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-
-Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
 call plug#end()
 
 

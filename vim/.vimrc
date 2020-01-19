@@ -111,3 +111,6 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
+" Silent make
+" https://vi.stackexchange.com/questions/3060/suppress-output-from-a-vim-autocomand
+command -nargs=* -bar Smake silent make <args> <bar> cwindow

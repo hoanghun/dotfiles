@@ -8,6 +8,7 @@ au BufNewFile,BufRead *.py
       \ set fileformat=unix
 
 let g:racer_cmd = "~/.cargo/bin/racer"
+compiler cargo
 
 
 " Use <c-space> to trigger completion.
@@ -43,8 +44,8 @@ function! s:show_documentation()
 endfunction
 
 " Use `[g` and `]g` to navigate diagnostics
-nmap <silent> <F2> <Plug>(coc-diagnostic-prev)
-nmap <silent> <S-F2> <Plug>(coc-diagnostic-next)
+nmap <silent> <S-F2> <Plug>(coc-diagnostic-prev)
+nmap <silent> <F2> <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)

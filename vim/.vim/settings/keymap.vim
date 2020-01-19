@@ -8,7 +8,5 @@ nnoremap "" "*p
 inoremap jj <Esc>
 
 inoremap { {}<left>
-inoremap " ""<left>
-inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
