@@ -7,6 +7,11 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+" Use release branch (Recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'majutsushi/tagbar'
 
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -40,8 +45,3 @@ command! -bang -nargs=* Rg
 " Likewise, Files command with preview window
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-
-" Latex
-let g:tex_flavor='latex'
-let g:vimtex_view_method='skim'

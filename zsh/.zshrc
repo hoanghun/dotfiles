@@ -2,7 +2,7 @@
 export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin/bash:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.scripts/:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -63,3 +63,8 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/hungig/.sdkman"
 [[ -s "/Users/hungig/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/hungig/.sdkman/bin/sdkman-init.sh"
+
+
+# RUST 
+# Mac
+export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src

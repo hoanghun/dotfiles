@@ -22,5 +22,7 @@ colorscheme onehalfdark
 set splitbelow
 set splitright
 
+hi NonText guifg=bg
+
 
 let g:indent_guides_guide_size = 1

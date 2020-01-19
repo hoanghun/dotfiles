@@ -6,3 +6,9 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap "" "*p
 inoremap jj <Esc>
+
+inoremap { {}<left>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
