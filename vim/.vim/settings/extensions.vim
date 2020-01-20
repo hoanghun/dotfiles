@@ -16,10 +16,14 @@ Plug 'majutsushi/tagbar'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-unimpaired'
 
+Plug 'preservim/nerdtree'
+Plug 'airblade/vim-gitgutter'
+
 Plug 'junegunn/fzf.vim'
 
-Plug 'pgdouyon/vim-yin-yang'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+"Colorscheme
+Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 
