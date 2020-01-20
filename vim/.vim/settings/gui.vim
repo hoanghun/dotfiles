@@ -9,20 +9,12 @@ let g:lightline = {
       \   'cocstatus': 'coc#status'
       \ },
       \ }
-"let ayucolor="light"  " for light version of theme
-"colorscheme ayu
-colorscheme onehalfdark
-"set background=light
-"colorscheme PaperColor
-"colorscheme yang
-"colorscheme onedark 
-"colorscheme yin
+let ayucolor="mirage"
+colorscheme ayu
+set background=dark
 
 " focuses the new window
 set splitbelow
 set splitright
 
 hi NonText guifg=bg
-
-
-let g:indent_guides_guide_size = 1
