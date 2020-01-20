@@ -13,14 +13,12 @@ profile() { echo -e "\033]50;SetProfile=$1\a" }
 # Homebrew
 alias h="history"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias r=ranger
 alias vim=nvim
+alias r=ranger
+alias lg=lazygit
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
-alias cl=clear
-alias ll='ls -l'
 alias ls='ls -l'
 alias gitgraph='git log --all --decorate --oneline --graph'
-alias tpdock='cd ~/Workspace/emfip/build-tools/docker-workspace/ && docker-compose up'
 
 # Disable VIM keybindings
 bindkey -e
