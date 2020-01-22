@@ -9,12 +9,12 @@ let g:lightline = {
       \   'cocstatus': 'coc#status'
       \ },
       \ }
-let ayucolor="mirage"
-colorscheme ayu
-set background=dark
 
+let ayucolor="mirage"
+set background=dark
+colorscheme ayu
+"colorscheme one
+"
 " focuses the new window
 set splitbelow
 set splitright
-
-hi NonText guifg=bg

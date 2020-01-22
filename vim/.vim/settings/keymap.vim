@@ -10,3 +10,6 @@ inoremap jj <Esc>
 inoremap { {}<left>
 inoremap ( ()<left>
 inoremap [ []<left>
+
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>a :Buffers<CR>

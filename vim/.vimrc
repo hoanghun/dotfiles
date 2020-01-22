@@ -16,14 +16,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-"turn on syntax highlighting
-syntax on
-
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
@@ -39,11 +31,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-so ~/.vim/settings/shared-settings.vim
 so ~/.vim/settings/languages.vim
 so ~/.vim/settings/gui.vim
 so ~/.vim/settings/keymap.vim
-
 
 autocmd InsertEnter,InsertLeave * set cul!
 
@@ -58,6 +48,16 @@ if has('persistent_undo')
   set undofile
 endif
 
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+"turn on syntax highlighting
+syntax on
+
+set rnu nu
+
 " ================ Indentation ======================
 set autoindent
 set smartindent
@@ -67,32 +67,12 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-" Enable folding
-set foldmethod=syntax
-set foldlevel=99
-
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-
 " ================ Scrolling ========================
-
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
 
-
-" ================ Folds ============================
-
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
-
-" ================ Search ===========================
-
-set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
@@ -110,6 +90,9 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+" default updatetime 4000ms is not good for async update
+set updatetime=100
 
 " Silent make
 " https://vi.stackexchange.com/questions/3060/suppress-output-from-a-vim-autocomand
