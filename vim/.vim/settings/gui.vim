@@ -13,7 +13,8 @@ let g:lightline = {
 let ayucolor="mirage"
 set background=dark
 colorscheme ayu
-"colorscheme one
+colorscheme palenight
+colorscheme onehalflight
 "
 " focuses the new window
 set splitbelow

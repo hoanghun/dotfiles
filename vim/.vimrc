@@ -11,6 +11,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set mouse=a
+let mapleader=" "
 
 if exists('+termguicolors')
   set termguicolors

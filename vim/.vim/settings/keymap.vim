@@ -13,3 +13,6 @@ inoremap [ []<left>
 
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
+
+nnoremap <leader>l :colorscheme onehalflight<CR>
+nnoremap <leader>d :colorscheme palenight<CR>
