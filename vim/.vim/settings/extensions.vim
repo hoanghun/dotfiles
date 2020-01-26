@@ -22,6 +22,7 @@ Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-signify'
 
 Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
 
 "Colorscheme
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
@@ -32,7 +33,5 @@ Plug 'rakr/vim-one'
 Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
-
-" Fzf
-"https://github.com/junegunn/fzf.vim/issues/210"
-set rtp+=/usr/local/opt/fzf
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
