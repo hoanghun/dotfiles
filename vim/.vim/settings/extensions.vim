@@ -15,9 +15,9 @@ Plug 'majutsushi/tagbar'
 
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'preservim/nerdtree'
-
 
 Plug 'mhinz/vim-signify'
 
