@@ -1,6 +1,7 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype plugin indent on
 
 " ================ General Config ====================
 set backspace=indent,eol,start          "Allow backspace in insert mode
@@ -39,13 +40,9 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundles.vim
-" Use Vundle plugin to manage all other plugins
 if filereadable(expand("~/.vim/settings/extensions.vim"))
   source ~/.vim/settings/extensions.vim
 endif
-au BufNewFile,BufRead *.vundle set filetype=vim
 
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 if empty(glob('~/.vim/autoload/plug.vim'))
