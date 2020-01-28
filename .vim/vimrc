@@ -64,7 +64,7 @@ if has('persistent_undo')
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'PaperColor',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
@@ -74,4 +74,5 @@ let g:lightline = {
       \ },
       \ }
 
-colorscheme palenight
+set background=light
+colorscheme PaperColor

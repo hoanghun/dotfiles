@@ -4,11 +4,12 @@ inoremap jj <Esc>
 nnoremap <silent> <leader>e :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
 
-nnoremap <leader>l :colorscheme onehalflight<CR>
-nnoremap <leader>d :colorscheme palenight<CR>
+nnoremap <silent> <leader>l :set background=light<CR>
+nnoremap <silent> <leader>d :set background=dark<CR>
 
 nnoremap <silent> <C-E> :e #<CR>
 nmap     <silent> <C-_> <Plug>NERDCommenterToggle
+vmap     <silent> <C-_> <Plug>NERDCommenterToggle
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
