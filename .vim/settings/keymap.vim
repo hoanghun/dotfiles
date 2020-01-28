@@ -8,6 +8,7 @@ nnoremap <leader>l :colorscheme onehalflight<CR>
 nnoremap <leader>d :colorscheme palenight<CR>
 
 nnoremap <silent> <C-E> :e #<CR>
+nmap     <silent> <C-_> <Plug>NERDCommenterToggle
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()

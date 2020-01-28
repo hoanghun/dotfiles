@@ -17,10 +17,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 
 Plug 'mhinz/vim-signify'
 
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 
