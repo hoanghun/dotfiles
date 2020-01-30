@@ -2,12 +2,12 @@ nnoremap "" "*p
 inoremap jj <Esc>
 
 nnoremap <silent> <leader>e :Files<CR>
-nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <C-E> :Buffers<CR>
 
 nnoremap <silent> <leader>l :set background=light<CR>
 nnoremap <silent> <leader>d :set background=dark<CR>
 
-nnoremap <silent> <C-E> :e #<CR>
+nnoremap <silent> <leader>a :e #<CR>
 nmap     <silent> <C-_> <Plug>NERDCommenterToggle
 vmap     <silent> <C-_> <Plug>NERDCommenterToggle
 
