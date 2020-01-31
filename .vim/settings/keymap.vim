@@ -11,6 +11,9 @@ nnoremap <silent> <leader>a :e #<CR>
 nmap     <silent> <C-_> <Plug>NERDCommenterToggle
 vmap     <silent> <C-_> <Plug>NERDCommenterToggle
 
+nnoremap <S-F10> :make run<CR>
+nnoremap <S-F9> :make build<CR>
+
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
