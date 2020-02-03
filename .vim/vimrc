@@ -30,7 +30,6 @@ set incsearch
 set nobackup
 set nowritebackup
 set cmdheight=2
-set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 set updatetime=100
@@ -62,17 +61,6 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
-
-let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'cocstatus': 'coc#status'
-      \ },
-      \ }
 
 set background=light
 colorscheme PaperColor

@@ -23,7 +23,6 @@ call plug#end()
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-
 " VIM SIGNIFY
 " :help signify-colors
 let g:signify_sign_show_text = 0
@@ -31,12 +30,13 @@ highlight SignifySignAdd                  ctermbg=green                guibg=#00
 highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
 highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
 
-
 " COC
 let g:coc_status_error_sign = "✘"
 let g:coc_status_warning_sign = ""
 let g:coc_status_info_sign = ""
 
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " FLOATING
 " https://github.com/neovim/neovim/issues/9718
@@ -64,3 +64,14 @@ function! CreateCenteredFloatingWindow()
 endfunction
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+
+let g:lightline = {
+      \ 'colorscheme': 'PaperColor',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'cocstatus': 'coc#status'
+      \ },
+      \ }

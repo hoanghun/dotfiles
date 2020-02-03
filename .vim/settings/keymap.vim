@@ -1,42 +1,51 @@
-nnoremap "" "*p
-inoremap jj <Esc>
+nnoremap <silent>   ""          "*p
+nnoremap <silent>   <leader>l   :set background=light<CR>
+nnoremap <silent>   <leader>d   :set background=dark<CR>
+nnoremap <silent>   <leader>e   :e #<CR>
+nnoremap            <S-F10>     :make run<CR>
+nnoremap            <S-F9>      :make build<CR>
 
-nnoremap <silent> <leader>e :Files<CR>
-nnoremap <silent> <C-E> :Buffers<CR>
+inoremap <silent>   jj          <Esc>
+inoremap <silent>   ;; <Esc>A;
 
-nnoremap <silent> <leader>l :set background=light<CR>
-nnoremap <silent> <leader>d :set background=dark<CR>
+nnoremap <silent>   <C-S-N>     :Files<CR>
+nnoremap <silent>   <C-E>       :Buffers<CR>
 
-nnoremap <silent> <leader>a :e #<CR>
-nmap     <silent> <C-_> <Plug>NERDCommenterToggle
-vmap     <silent> <C-_> <Plug>NERDCommenterToggle
+nmap     <silent>   <C-_>       <Plug>NERDCommenterToggle
+vmap     <silent>   <C-_>       <Plug>NERDCommenterToggle
 
-nnoremap <S-F10> :make run<CR>
-nnoremap <S-F9> :make build<CR>
+nnoremap <silent>   <C-S-A-l>   :Format<CR>
+nnoremap <silent>   <C-Q>       :call <SID>show_documentation()<CR>
+nnoremap <silent>   <space>a    :<C-u>CocList diagnostics<cr>
+nnoremap <silent>   <A-7>       :<C-u>CocList outline<cr>
+nnoremap <silent>   <space>n    :<C-u>CocList -I symbols<cr>
+nnoremap <silent>   <space>j    :<C-u>CocNext<CR>
+nnoremap <silent>   <space>k    :<C-u>CocPrev<CR>
+nnoremap <silent>   <space>p    :<C-u>CocListResume<CR>
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr>     <cr>        pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr>     <S-TAB>     pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
+nmap                <S-F6>      <Plug>(coc-rename)
+nmap     <silent>   <S-F2>      <Plug>(coc-diagnostic-prev)
+nmap     <silent>   <F2>        <Plug>(coc-diagnostic-next)
+
+nmap     <silent>   gd          <Plug>(coc-definition)
+nmap     <silent>   gy          <Plug>(coc-type-definition)
+nmap     <silent>   gi          <Plug>(coc-implementation)
+nmap     <silent>   gr          <Plug>(coc-references)
+
+inoremap <silent>   <expr>      <c-space>   coc#refresh()
+inoremap <silent>   <expr>      <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-
-" Use K to show documentation in preview window
-nnoremap <silent> <C-Q> :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -45,16 +54,3 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> <S-F2> <Plug>(coc-diagnostic-prev)
-nmap <silent> <F2> <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Remap for rename current word
-nmap <S-F6> <Plug>(coc-rename)
