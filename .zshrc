@@ -24,16 +24,7 @@ alias gitgraph='git log --all --decorate --oneline --graph'
 bindkey -e
 stty -ixon
 
-# Prompt configuration
-# Must be after sourcing oh my zsh
-autoload -U promptinit; promptinit
-prompt pure
-prompt_newline='%666v'
-PROMPT=" $PROMPT"
-
-# For completeness, start by closing the original %F{magenta} with %f.
-# The final %f will be added by the PROMPT definition.
-PURE_PROMPT_SYMBOL='%f%F{red}#%f %F{magenta}❯'
+PROMPT='%F{213}%n:%B%F{220}%4~%f%b %# '
 
 # https://unix.stackexchange.com/questions/470714/replicate-oh-my-zsh-directory-tab-completion-selection-with-arrow-keys
 autoload -U compinit
@@ -63,6 +54,8 @@ export SDKMAN_DIR="/Users/hungig/.sdkman"
 [[ -s "/Users/hungig/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/hungig/.sdkman/bin/sdkman-init.sh"
 
 
-# RUST 
-# Mac
 export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
