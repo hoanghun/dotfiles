@@ -10,6 +10,8 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 # change profile
 profile() { echo -e "\033]50;SetProfile=$1\a" }
 
+source ~/.aliases
+
 # Homebrew
 alias h="history"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
@@ -24,7 +26,11 @@ alias gitgraph='git log --all --decorate --oneline --graph'
 bindkey -e
 stty -ixon
 
-PROMPT='%F{213}%n:%B%F{220}%4~%f%b %# '
+PROMPT='%F{213}%n:%B%F{220}%2~%f%b %# '
+
+# https://unix.stackexchange.com/questions/258656/how-can-i-have-two-keystrokes-to-delete-to-either-a-slash-or-a-word-in-zsh
+autoload -U select-word-style
+select-word-style bash
 
 # https://unix.stackexchange.com/questions/470714/replicate-oh-my-zsh-directory-tab-completion-selection-with-arrow-keys
 autoload -U compinit
