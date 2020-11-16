@@ -20,7 +20,8 @@ Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'vimwiki/vimwiki'
+Plug 'arzg/vim-colors-xcode'
+
 call plug#end()
 
 command! -bang -nargs=? -complete=dir Files

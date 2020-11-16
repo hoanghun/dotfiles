@@ -26,8 +26,6 @@ alias gitgraph='git log --all --decorate --oneline --graph'
 bindkey -e
 stty -ixon
 
-PROMPT='%F{213}%n:%B%F{220}%2~%f%b %# '
-
 # https://unix.stackexchange.com/questions/258656/how-can-i-have-two-keystrokes-to-delete-to-either-a-slash-or-a-word-in-zsh
 autoload -U select-word-style
 select-word-style bash
@@ -36,6 +34,11 @@ select-word-style bash
 autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
+
+autoload -U promptinit; promptinit
+prompt pure
+
+#PROMPT='%F{yellow}%* '$PROMPT
 
 # history
 HISTFILE="$HOME/.zsh_history"
@@ -65,3 +68,4 @@ export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/r
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
