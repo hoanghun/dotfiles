@@ -8,7 +8,7 @@ nnoremap            <S-F9>      :make build<CR>
 inoremap <silent>   jj          <Esc>
 inoremap <silent>   ;; <Esc>A;
 
-nnoremap <silent>   <C-S-N>     :Files<CR>
+nnoremap <silent>   <C-S-N>     :GFiles<CR>
 nnoremap <silent>   <C-E>       :Buffers<CR>
 
 nmap     <silent>   <C-_>       <Plug>NERDCommenterToggle
