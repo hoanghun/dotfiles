@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'majutsushi/tagbar'
+Plug 'cormacrelf/vim-colors-github'
 
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-unimpaired'
@@ -70,7 +70,7 @@ endfunction
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'github',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]

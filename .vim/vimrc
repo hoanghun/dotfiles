@@ -63,5 +63,6 @@ if has('persistent_undo')
 endif
 
 set background=light
-colorscheme xcodelighthc
+colorscheme github
+let g:github_colors_soft = 1
 let $BAT_THEME = 'GitHub'
