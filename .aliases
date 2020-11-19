@@ -17,3 +17,4 @@ alias gitgraph='git log --all --decorate --oneline --graph'
 
 alias vpnup='sudo wg-quick up wg0-client'
 alias vpndown='sudo wg-quick down wg0-client'
+alias gitstats='git shortlog -s -n -e --all'
