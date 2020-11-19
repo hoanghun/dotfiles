@@ -14,6 +14,9 @@ nnoremap <silent>   <C-E>       :Buffers<CR>
 nmap     <silent>   <C-_>       <Plug>NERDCommenterToggle
 vmap     <silent>   <C-_>       <Plug>NERDCommenterToggle
 
+xmap <A-cr>  <Plug>(coc-codeaction-selected)
+nmap <A-cr>  <Plug>(coc-codeaction-selected)
+
 nnoremap <silent>   <C-S-A-l>   :Format<CR>
 nnoremap <silent>   <C-Q>       :call <SID>show_documentation()<CR>
 nnoremap <silent>   <space>a    :<C-u>CocList diagnostics<cr>

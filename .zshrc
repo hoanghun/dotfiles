@@ -10,23 +10,16 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 # change profile
 profile() { echo -e "\033]50;SetProfile=$1\a" }
 
-source ~/.aliases
-
 # Homebrew
-alias h="history"
-alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-alias vim=nvim
-alias r=ranger
-alias lg=lazygit
-alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
-alias ls='ls -l'
-alias gitgraph='git log --all --decorate --oneline --graph'
 
 # Disable VIM keybindings
 bindkey -e
 stty -ixon
 
-# https://unix.stackexchange.com/questions/258656/how-can-i-have-two-keystrokes-to-delete-to-either-a-slash-or-a-word-in-zsh
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
+
 autoload -U select-word-style
 select-word-style bash
 
@@ -34,9 +27,6 @@ select-word-style bash
 autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
-
-autoload -U promptinit; promptinit
-prompt pure
 
 #PROMPT='%F{yellow}%* '$PROMPT
 
@@ -69,3 +59,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
