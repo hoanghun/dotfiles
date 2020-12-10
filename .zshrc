@@ -3,6 +3,9 @@ export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin/bash:$PATH"
 export PATH="$HOME/.cargo/bin:$HOME/.scripts/:$PATH"
+export PATH="$HOME/opt/Android/cmdline-tools/tools/bin/:$HOME/opt/Android/platform-tools:$PATH"
+export PATH=~/.npm-global/bin:$PATH
+export ANDROID_HOME=/home/qhoah/opt/Android
 export VISUAL=nvim
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -28,7 +31,7 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
-#PROMPT='%F{yellow}%* '$PROMPT
+PROMPT='%F{yellow}%* '$PROMPT
 
 # history
 HISTFILE="$HOME/.zsh_history"

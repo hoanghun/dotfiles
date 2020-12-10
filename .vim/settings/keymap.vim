@@ -38,6 +38,8 @@ nmap     <silent>   gy          <Plug>(coc-type-definition)
 nmap     <silent>   gi          <Plug>(coc-implementation)
 nmap     <silent>   gr          <Plug>(coc-references)
 
+nnoremap <silent>   <A-1>       :NERDTreeToggle<CR>
+
 inoremap <silent>   <expr>      <c-space>   coc#refresh()
 inoremap <silent>   <expr>      <TAB>
       \ pumvisible() ? "\<C-n>" :
