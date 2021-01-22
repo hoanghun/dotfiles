@@ -28,7 +28,7 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
-#PROMPT='%F{yellow}%* '$PROMPT
+PROMPT='%F{yellow}%* '$PROMPT
 
 # history
 HISTFILE="$HOME/.zsh_history"
