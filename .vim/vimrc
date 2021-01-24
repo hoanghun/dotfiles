@@ -33,6 +33,7 @@ set cmdheight=2
 set shortmess+=c
 set signcolumn=yes
 set updatetime=100
+set fcs=eob:\
 let mapleader=" "
 
 if exists('+termguicolors')
@@ -65,5 +66,14 @@ endif
 set background=light
 let g:github_colors_block_diffmark = 0
 let g:github_colors_soft = 1
-colorscheme github
-let $BAT_THEME = 'GitHub'
+let ayucolor="light"
+colorscheme palenight
+let $BAT_THEME = 'OneHalfDark'
+
+" VIM SIGNIFY
+" :help signify-colors
+let g:signify_sign_show_text = 0
+
+highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
+highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
+highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00

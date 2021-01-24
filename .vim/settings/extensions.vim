@@ -2,8 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'cormacrelf/vim-colors-github'
-
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
@@ -12,15 +10,26 @@ Plug 'alvan/vim-closetag'
 
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
+Plug 'majutsushi/tagbar'
 
 Plug 'mhinz/vim-signify'
+
+Plug 'ryanoasis/vim-devicons'
+
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 
+" colors
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'arzg/vim-colors-xcode'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'cormacrelf/vim-colors-github'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -30,6 +39,9 @@ command! -bang -nargs=? -complete=dir Files
 " VIM SIGNIFY
 " :help signify-colors
 let g:signify_sign_show_text = 0
+
+let g:signify_sign_show_text = 0
+
 highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
 highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
 highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
@@ -70,7 +82,7 @@ endfunction
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 let g:lightline = {
-      \ 'colorscheme': 'github',
+      \ 'colorscheme': 'palenight',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
