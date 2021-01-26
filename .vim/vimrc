@@ -67,7 +67,7 @@ set background=light
 let g:github_colors_block_diffmark = 0
 let g:github_colors_soft = 1
 let ayucolor="light"
-colorscheme palenight
+colorscheme xcodedarkhc
 let $BAT_THEME = 'OneHalfDark'
 
 " VIM SIGNIFY
