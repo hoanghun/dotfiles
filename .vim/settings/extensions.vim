@@ -36,16 +36,6 @@ call plug#end()
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
-" VIM SIGNIFY
-" :help signify-colors
-let g:signify_sign_show_text = 0
-
-let g:signify_sign_show_text = 0
-
-highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
-highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
-highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
-
 " COC
 let g:coc_status_error_sign = "✘"
 let g:coc_status_warning_sign = ""
@@ -91,3 +81,4 @@ let g:lightline = {
       \   'cocstatus': 'coc#status'
       \ },
       \ }
+
