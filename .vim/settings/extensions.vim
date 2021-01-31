@@ -10,14 +10,15 @@ Plug 'alvan/vim-closetag'
 
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
-Plug 'majutsushi/tagbar'
 
 "Plug 'mhinz/vim-signify'
 
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'junegunn/fzf.vim'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim' | Plug '/usr/local/opt/fzf'
+
+Plug 'puremourning/vimspector'
+Plug 'mhinz/vim-startify'
 
 " colors
 Plug 'NLKNguyen/papercolor-theme'
@@ -67,13 +68,16 @@ function! CreateCenteredFloatingWindow()
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
 
+" VIMSPECTOR SETTINGS
+let g:vimspector_enable_mappings = 'HUMAN'
+
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]

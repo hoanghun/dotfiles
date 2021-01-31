@@ -35,6 +35,7 @@ set signcolumn=yes
 set updatetime=100
 set fcs=eob:\
 let mapleader=" "
+set cursorline
 
 if exists('+termguicolors')
   set termguicolors
@@ -53,7 +54,8 @@ endif
 
 so ~/.vim/settings/keymap.vim
 
-autocmd InsertEnter,InsertLeave * set cul!
+" Turns on/off cursor line on enter/leave
+" autocmd InsertEnter,InsertLeave * set cul!
 
 if has('persistent_undo')
   if !isdirectory(expand('~').'/.vim/backups')
@@ -63,11 +65,8 @@ if has('persistent_undo')
   set undofile
 endif
 
-let g:github_colors_block_diffmark = 0
-let g:github_colors_soft = 1
-let ayucolor="light"
-colorscheme xcodedarkhc
-let $BAT_THEME = 'OneHalfDark'
+colorscheme xcodelighthc
+let $BAT_THEME = 'base16'
 
 " VIM SIGNIFY
 " :help signify-colors
