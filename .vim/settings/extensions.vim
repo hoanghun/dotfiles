@@ -12,12 +12,10 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
 
-Plug 'mhinz/vim-signify'
+"Plug 'mhinz/vim-signify'
 
 Plug 'ryanoasis/vim-devicons'
 
-
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
 Plug '/usr/local/opt/fzf'
 
@@ -68,6 +66,9 @@ function! CreateCenteredFloatingWindow()
     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
