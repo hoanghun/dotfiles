@@ -14,10 +14,10 @@ Plug 'preservim/nerdtree'
 "Plug 'mhinz/vim-signify'
 
 Plug 'ryanoasis/vim-devicons'
+Plug 'Yggdroot/indentLine'
 
 Plug 'junegunn/fzf.vim' | Plug '/usr/local/opt/fzf'
 
-Plug 'puremourning/vimspector'
 Plug 'mhinz/vim-startify'
 
 " colors
@@ -68,6 +68,10 @@ function! CreateCenteredFloatingWindow()
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
 
+" RUST VIM
+" https://github.com/rust-lang/rust.vim/pull/384
+let g:cargo_shell_command_runner = '!'
+
 " VIMSPECTOR SETTINGS
 let g:vimspector_enable_mappings = 'HUMAN'
 
@@ -76,11 +80,14 @@ let g:NERDSpaceDelims = 1
 
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
 
+" Indent lines
+let g:indentLine_char = '|'
+
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status'

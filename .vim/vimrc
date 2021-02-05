@@ -33,7 +33,6 @@ set cmdheight=2
 set shortmess+=c
 set signcolumn=yes
 set updatetime=100
-set fcs=eob:\
 let mapleader=" "
 set cursorline
 
