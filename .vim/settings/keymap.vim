@@ -47,10 +47,10 @@ inoremap <silent>   <expr>      <TAB>
       \ coc#refresh()
 
 
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
+" inoremap <Up> <Nop>
+" inoremap <Down> <Nop>
+" inoremap <Left> <Nop>
+" inoremap <Right> <Nop>
 
 
 function! s:check_back_space() abort
