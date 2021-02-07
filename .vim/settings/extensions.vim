@@ -17,6 +17,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 
 Plug 'junegunn/fzf.vim' | Plug '/usr/local/opt/fzf'
+Plug 'puremourning/vimspector'
 
 Plug 'mhinz/vim-startify'
 
