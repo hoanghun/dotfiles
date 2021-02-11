@@ -12,6 +12,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 
 "Plug 'mhinz/vim-signify'
+Plug 'lervag/vimtex'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
@@ -37,9 +38,9 @@ command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
 
 " COC
-let g:coc_status_error_sign = "✘"
-let g:coc_status_warning_sign = ""
-let g:coc_status_info_sign = ""
+let g:coc_status_error_sign = "\uf12a"
+let g:coc_status_warning_sign = "\uf128"
+let g:coc_status_info_sign = "\ufb4d"
 
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
@@ -75,6 +76,8 @@ let g:cargo_shell_command_runner = '!'
 
 " VIMSPECTOR SETTINGS
 let g:vimspector_enable_mappings = 'HUMAN'
+
+let g:indentLine_setConceal = 0
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
