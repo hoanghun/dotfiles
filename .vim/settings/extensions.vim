@@ -11,8 +11,11 @@ Plug 'alvan/vim-closetag'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 
+
 "Plug 'mhinz/vim-signify'
 Plug 'lervag/vimtex'
+Plug 'vimwiki/vimwiki'
+
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
