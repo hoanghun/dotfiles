@@ -15,6 +15,7 @@ Plug 'preservim/nerdtree'
 "Plug 'mhinz/vim-signify'
 Plug 'lervag/vimtex'
 Plug 'vimwiki/vimwiki'
+Plug 'rhysd/git-messenger.vim'
 
 
 Plug 'ryanoasis/vim-devicons'
