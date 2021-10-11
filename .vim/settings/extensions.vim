@@ -11,19 +11,14 @@ Plug 'alvan/vim-closetag'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 
-
-"Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 Plug 'lervag/vimtex'
 Plug 'vimwiki/vimwiki'
-Plug 'rhysd/git-messenger.vim'
-
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
 
 Plug 'junegunn/fzf.vim' | Plug '/usr/local/opt/fzf'
-Plug 'puremourning/vimspector'
-
 Plug 'mhinz/vim-startify'
 
 " colors

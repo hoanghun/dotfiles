@@ -1,6 +1,9 @@
 imap jj <Esc>
 set rnu nu
 
+set visualbell
+set noerrorbells
+
 let mapleader = " "
 inoremap jj <Esc>
 map <leader>a :action $SelectAll<CR>

@@ -2,13 +2,12 @@
 export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin/bash:$PATH"
-export PATH="$HOME/.cargo/bin:$HOME/.scripts/:$PATH"
-export PATH="$HOME/opt/Android/cmdline-tools/tools/bin/:$HOME/opt/Android/platform-tools:$PATH"
-export PATH=~/.npm-global/bin:$PATH
-export ANDROID_HOME=/home/qhoah/opt/Android
+export PATH="$HOME/bin:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export PATH=/opt/homebrew/bin:$PATH
+
 
 # change profile
 profile() { echo -e "\033]50;SetProfile=$1\a" }
@@ -51,17 +50,12 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/hungig/.sdkman"
-[[ -s "/Users/hungig/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/hungig/.sdkman/bin/sdkman-init.sh"
-
-
-export RUST_SRC_PATH=${HOME}/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
