@@ -2,7 +2,7 @@
 export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin/bash:$PATH"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/Scripts:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -56,6 +56,18 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+if [ -f ~/.functions ]; then
+    source ~/.functions
+fi
+
+# this loads sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+ # add autocomplete permanently to your zsh shell
+[[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
+# This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+# This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
