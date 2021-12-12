@@ -64,7 +64,7 @@ if has('persistent_undo')
   set undofile
 endif
 
-colorscheme xcodelighthc
+colorscheme xcodedarkhc
 let $BAT_THEME = 'base16'
 
 " VIM SIGNIFY
