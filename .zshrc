@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # Path to your oh-my-zsh installation.
 export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:$PATH"
@@ -5,9 +10,9 @@ export PATH="/usr/local/bin/bash:$PATH"
 export PATH="$HOME/Scripts:$PATH"
 export VISUAL=nvim
 export EDITOR=nvim
+export NNN_OPENER=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export PATH=/opt/homebrew/bin:$PATH
-
 
 # change profile
 profile() { echo -e "\033]50;SetProfile=$1\a" }
@@ -71,3 +76,5 @@ export NVM_DIR="$HOME/.nvm"
 # This loads nvm bash_completion
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
+source /opt/homebrew/etc/profile.d/z.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

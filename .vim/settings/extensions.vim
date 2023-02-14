@@ -31,6 +31,9 @@ Plug 'rakr/vim-one'
 Plug 'ayu-theme/ayu-vim'
 Plug 'drewtempelmeyer/palenight.vim'
 
+" crypto
+Plug 'tomlion/vim-solidity'
+
 call plug#end()
 
 " COC
