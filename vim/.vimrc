@@ -40,8 +40,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-if filereadable(expand("~/.vim/settings/extensions.vim"))
-  source ~/.vim/settings/extensions.vim
+if filereadable(expand("~/.config/vim/settings/extensions.vim"))
+  source ~/.config/vim/settings/extensions.vim
 endif
 
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
@@ -51,7 +51,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-so ~/.vim/settings/keymap.vim
+so ~/.config/vim/settings/keymap.vim
 
 " Turns on/off cursor line on enter/leave
 " autocmd InsertEnter,InsertLeave * set cul!

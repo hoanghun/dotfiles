@@ -23,7 +23,7 @@ profile() { echo -e "\033]50;SetProfile=$1\a" }
 bindkey -e
 stty -ixon
 
-fpath+=$HOME/.zsh/pure
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 
@@ -68,13 +68,14 @@ fi
 # this loads sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
- # add autocomplete permanently to your zsh shell
-[[ /opt/homebrew/bin/kubectl ]] && source <(kubectl completion zsh)
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 # This loads nvm bash_completion
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
-source /opt/homebrew/etc/profile.d/z.sh
+eval "$(zoxide init zsh)"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
