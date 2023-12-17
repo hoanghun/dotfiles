@@ -67,6 +67,14 @@ endif
 colorscheme xcodedarkhc
 let $BAT_THEME = 'base16'
 
+" https://vi.stackexchange.com/questions/23110/pasting-text-on-vim-inside-tmux-breaks-indentation
+if &term =~ "screen"
+    let &t_BE = "\e[?2004h"
+    let &t_BD = "\e[?2004l"
+    exec "set t_PS=\e[200~"
+    exec "set t_PE=\e[201~"
+endif
+
 " VIM SIGNIFY
 " :help signify-colors
 let g:signify_sign_show_text = 0
