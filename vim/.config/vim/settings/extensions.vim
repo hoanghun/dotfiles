@@ -1,12 +1,12 @@
 call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+Plug 'neovim/nvim-lspconfig'
 
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
@@ -36,13 +36,7 @@ Plug 'tomlion/vim-solidity'
 
 call plug#end()
 
-" COC
-let g:coc_status_error_sign = "\uf12a"
-let g:coc_status_warning_sign = "\uf128"
-let g:coc_status_info_sign = "\ufb4d"
-
-command! -nargs=0 Format :call CocAction('format')
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+let g:vim_json_conceal=0
 
 " RUST VIM
 " https://github.com/rust-lang/rust.vim/pull/384
