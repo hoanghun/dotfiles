@@ -35,6 +35,7 @@ set signcolumn=yes
 set updatetime=100
 let mapleader=" "
 set cursorline
+nnoremap <D-[> :bprev<CR>
 
 if exists('+termguicolors')
   set termguicolors

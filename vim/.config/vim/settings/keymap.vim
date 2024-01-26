@@ -18,7 +18,5 @@ xmap <A-cr>  <Plug>(coc-codeaction-selected)
 nmap <A-cr>  <Plug>(coc-codeaction-selected)
 
 nnoremap <silent>   <C-S-A-l>   :Format<CR>
-nnoremap <silent>   <C-Q>       :call <SID>show_documentation()<CR>
-nnoremap <silent>   <F1>        :call <SID>show_documentation()<CR>
 
 nnoremap <silent>   <A-1>       :NERDTreeToggle<CR>

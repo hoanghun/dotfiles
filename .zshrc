@@ -12,6 +12,7 @@ export EDITOR=nvim
 export NNN_OPENER=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export PATH=/opt/homebrew/bin:$PATH
+export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/service-account.json
 
 # change profile
 profile() { echo -e "\033]50;SetProfile=$1\a" }

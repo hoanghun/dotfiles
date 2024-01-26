@@ -6,7 +6,14 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+" lsp
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'j-hui/fidget.nvim'
 
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
@@ -30,10 +37,6 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'rakr/vim-one'
 Plug 'ayu-theme/ayu-vim'
 Plug 'drewtempelmeyer/palenight.vim'
-
-" crypto
-Plug 'tomlion/vim-solidity'
-
 call plug#end()
 
 let g:vim_json_conceal=0
