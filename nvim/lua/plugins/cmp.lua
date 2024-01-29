@@ -9,11 +9,13 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
     'windwp/nvim-autopairs',
+    'L3MON4D3/LuaSnip',
   },
   config = function()
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
     local cmp = require 'cmp'
     local lspkind = require("lspkind")
+    local luasnip = require("luasnip")
 
     require("nvim-autopairs").setup()
 
@@ -31,10 +33,7 @@ return {
         ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
         -- C-b (back) C-f (forward) for snippet placeholder navigation.
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<CR>'] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        },
+        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- select suggestion
         ['<Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
