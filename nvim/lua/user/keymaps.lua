@@ -5,7 +5,7 @@ local tnoremap = require("user.keymap_utils").tnoremap
 local xnoremap = require("user.keymap_utils").xnoremap
 
 -- Map Oil to <leader>e
-nnoremap("<leader>1", function()
+nnoremap("<leader>e", function()
   require("oil").toggle_float()
 end)
 
