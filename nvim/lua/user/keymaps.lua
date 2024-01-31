@@ -36,3 +36,16 @@ nnoremap("<leader>ss", function()
     previewer = false,
   }))
 end, { desc = "[S]earch [S]pelling suggestions" })
+
+-- Center buffer while navigating
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("{", "{zz")
+nnoremap("}", "}zz")
+nnoremap("G", "Gzz")
+nnoremap("gg", "ggzz")
+nnoremap("<C-i>", "<C-i>zz")
+nnoremap("<C-o>", "<C-o>zz")
+nnoremap("%", "%zz")
+nnoremap("*", "*zz")
+nnoremap("#", "#zz")
