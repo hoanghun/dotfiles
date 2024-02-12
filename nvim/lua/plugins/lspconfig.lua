@@ -4,6 +4,7 @@ return {
     require 'lspconfig'.ocamllsp.setup {}
     require 'lspconfig'.pyright.setup {}
     require 'lspconfig'.rust_analyzer.setup {}
+    require 'lspconfig'.tsserver.setup {}
 
     require 'lspconfig'.lua_ls.setup {
       on_init = function(client)
