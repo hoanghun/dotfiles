@@ -9,17 +9,17 @@ nnoremap("<leader>e", function()
   require("oil").toggle_float()
 end)
 
-nnoremap("<leader>sb", require("telescope.builtin").buffers, { desc = "[S]earch Open [B]uffers" })
-nnoremap("<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-nnoremap("<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-nnoremap("<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
-nnoremap("<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
+nnoremap("<leader>fb", require("telescope.builtin").buffers, { desc = "[F]ind Open [B]uffers" })
+nnoremap("<leader>fh", require("telescope.builtin").help_tags, { desc = "[F]ind [H]elp" })
+nnoremap("<leader>fw", require("telescope.builtin").grep_string, { desc = "[F]ind current [W]ord" })
+nnoremap("<leader>fg", require("telescope.builtin").live_grep, { desc = "[F]ind by [G]rep" })
+nnoremap("<leader>fd", require("telescope.builtin").diagnostics, { desc = "[F]ind [D]iagnostics" })
 
-nnoremap("<leader>sc", function()
+nnoremap("<leader>fc", function()
   require("telescope.builtin").commands(require("telescope.themes").get_dropdown({
     previewer = false,
   }))
-end, { desc = "[S]earch [C]ommands" })
+end, { desc = "[F]ind [C]ommands" })
 
 nnoremap("<leader>/", function()
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
@@ -27,15 +27,9 @@ nnoremap("<leader>/", function()
   }))
 end, { desc = "[/] Fuzzily search in current buffer]" })
 
-nnoremap("<leader>sf", function()
+nnoremap("<leader>ff", function()
   require("telescope.builtin").find_files({ hidden = true })
-end, { desc = "[S]earch [F]iles" })
-
-nnoremap("<leader>ss", function()
-  require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown({
-    previewer = false,
-  }))
-end, { desc = "[S]earch [S]pelling suggestions" })
+end, { desc = "[F]ind [F]iles" })
 
 -- Center buffer while navigating
 nnoremap("<C-u>", "<C-u>zz")
