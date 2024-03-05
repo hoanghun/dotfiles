@@ -38,12 +38,14 @@ return {
       end
     }
 
+    local a = ''
     -- Global mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    vim.keymap.set('n', '<space><F1>', vim.diagnostic.open_float)
-    vim.keymap.set('n', '<S-F2>', vim.diagnostic.goto_prev)
-    vim.keymap.set('n', '<F2>', vim.diagnostic.goto_next)
-    vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+    local nnoremap = require("user.keymap_utils").nnoremap
+    nnoremap('<space><F1>', vim.diagnostic.open_float, { desc = "Open diagnostics" })
+    nnoremap('<S-F2>', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
+    nnoremap('<F2>', vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+    nnoremap('<space>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
@@ -55,24 +57,23 @@ return {
 
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local opts = { buffer = ev.buf }
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', '<F1>', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-        vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-        vim.keymap.set('n', '<space>wl', function()
+        nnoremap('gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to declaration" })
+        nnoremap('gd', vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
+        nnoremap('F1', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Documentation hover" })
+        nnoremap('gi', vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Go to implementation" })
+        nnoremap('<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Show signature help" })
+        nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = "Add workspace folder" })
+        nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, { buffer = ev.buf, desc = "Remove workspace foler" })
+        nnoremap('<space>wl', function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts)
-        vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-        vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'v' }, '<space><CR>', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<space>f', function()
+        end, { buffer = ev.buf, desc = "List workspace folders" })
+        nnoremap('<space>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Show type definition" })
+        nnoremap('<space>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename" })
+        nnoremap('<space><CR>', vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code action" })
+        nnoremap('gr', vim.lsp.buf.references, { buffer = ev.buf, desc = "Go to reference" })
+        nnoremap('<space>fc', function()
           vim.lsp.buf.format { async = true }
-        end, opts)
+        end, { buffer = ev.buf, desc = "Format Code" })
       end,
     })
   end
