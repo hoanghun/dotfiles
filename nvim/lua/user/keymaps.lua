@@ -9,6 +9,7 @@ nnoremap("<leader>e", function()
   require("oil").toggle_float()
 end, { desc = "Open oil"})
 
+
 nnoremap("<leader>fb", require("telescope.builtin").buffers, { desc = "Find Open Buffers" })
 nnoremap("<leader>fh", require("telescope.builtin").help_tags, { desc = "Find Help" })
 nnoremap("<leader>fw", require("telescope.builtin").grep_string, { desc = "Find Current Word" })
@@ -43,3 +44,4 @@ nnoremap("<C-o>", "<C-o>zz")
 nnoremap("%", "%zz")
 nnoremap("*", "*zz")
 nnoremap("#", "#zz")
+inoremap("jj", "<Esc>")

@@ -13,20 +13,13 @@ return {
           client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
             Lua = {
               runtime = {
-                -- Tell the language server which version of Lua you're using
-                -- (most likely LuaJIT in the case of Neovim)
                 version = 'LuaJIT'
               },
-              -- Make the server aware of Neovim runtime files
               workspace = {
                 checkThirdParty = false,
                 library = {
                   vim.env.VIMRUNTIME
-                  -- "${3rd}/luv/library"
-                  -- "${3rd}/busted/library",
                 }
-                -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-                -- library = vim.api.nvim_get_runtime_file("", true)
               }
             }
           })
@@ -38,7 +31,6 @@ return {
       end
     }
 
-    local a = ''
     -- Global mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     local nnoremap = require("user.keymap_utils").nnoremap
@@ -59,7 +51,7 @@ return {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         nnoremap('gD', vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to declaration" })
         nnoremap('gd', vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
-        nnoremap('F1', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Documentation hover" })
+        nnoremap('<F1>', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Documentation hover" })
         nnoremap('gi', vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Go to implementation" })
         nnoremap('<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Show signature help" })
         nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = "Add workspace folder" })
