@@ -10,7 +10,7 @@ alt - l : yabai -m window --focus east
 alt - u : yabai -m display --focus south
 alt - i : yabai -m display --focus north
 alt - y : yabai -m display --focus west
-alt - o : yabai -m display --focus east
+# alt - o : yabai -m display --focus east
 
 # modifying the layout
 

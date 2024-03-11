@@ -7,13 +7,18 @@ local xnoremap = require("user.keymap_utils").xnoremap
 -- Map Oil to <leader>e
 nnoremap("<leader>e", function()
   require("oil").toggle_float()
-end, { desc = "Open oil"})
+end, { desc = "Open oil" })
 
 
+nnoremap("<A-e>", require("telescope.builtin").buffers, { desc = "Find Open Buffers" })
 nnoremap("<leader>fb", require("telescope.builtin").buffers, { desc = "Find Open Buffers" })
+
 nnoremap("<leader>fh", require("telescope.builtin").help_tags, { desc = "Find Help" })
 nnoremap("<leader>fw", require("telescope.builtin").grep_string, { desc = "Find Current Word" })
+
+nnoremap("<A-f>", require("telescope.builtin").live_grep, { desc = "Find By Grep" })
 nnoremap("<leader>fg", require("telescope.builtin").live_grep, { desc = "Find By Grep" })
+
 nnoremap("<leader>fd", require("telescope.builtin").diagnostics, { desc = "Find Diagnostics" })
 
 nnoremap("<leader>fc", function()
@@ -28,9 +33,8 @@ nnoremap("<leader>/", function()
   }))
 end, { desc = "[/] Fuzzily search in current buffer]" })
 
-nnoremap("<leader>ff", function()
-  require("telescope.builtin").find_files({ hidden = true })
-end, { desc = "Find Files" })
+nnoremap("<A-o>", function() require("telescope.builtin").find_files({ hidden = true }) end, { desc = "Find Files" })
+nnoremap("<leader>ff", function() require("telescope.builtin").find_files({ hidden = true }) end, { desc = "Find Files" })
 
 -- Center buffer while navigating
 nnoremap("<C-u>", "<C-u>zz")
