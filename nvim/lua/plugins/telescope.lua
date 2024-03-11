@@ -18,7 +18,15 @@ return {
           "node_modules",
         },
         hidden = true,
+        sorting_strategy = "ascending",
       },
+
+      pickers = {
+        buffers = {
+          sort_mru = true,
+          ignore_current_buffer = true,
+        }
+      }
     })
     pcall(require("telescope").load_extension, "fzf")
   end
