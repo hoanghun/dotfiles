@@ -62,11 +62,19 @@ return {
         expandable_indicator = true,
         format = lspkind.cmp_format({
           mode = "symbol_text",
-          maxwidth = 50,
+          maxwidth = 75,
           ellipsis_char = "...",
-          symbol_map = {
-            Copilot = "",
-          },
+          before = function(entry, vim_item)
+            vim_item.menu = ({
+              buffer = '[Buffer]',
+              luasnip = '[Snip]',
+              nvim_lsp = '[LSP]',
+              nvim_lua = '[API]',
+              path = '[Path]',
+              rg = '[RG]',
+            })[entry.source.name]
+            return vim_item
+          end
         }),
       },
     }
