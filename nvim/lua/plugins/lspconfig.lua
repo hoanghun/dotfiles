@@ -61,7 +61,6 @@ return {
         end, { buffer = ev.buf, desc = "List workspace folders" })
         nnoremap('<space>D', vim.lsp.buf.type_definition, { buffer = ev.buf, desc = "Show type definition" })
         nnoremap('<space>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename" })
-        nnoremap('<space><CR>', vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code action" })
         nnoremap('gr', vim.lsp.buf.references, { buffer = ev.buf, desc = "Go to reference" })
         nnoremap('<space>fc', function()
           vim.lsp.buf.format { async = true }
