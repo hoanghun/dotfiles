@@ -11,6 +11,7 @@ end, { desc = "Open oil" })
 
 
 nnoremap("<A-e>", require("telescope.builtin").buffers, { desc = "Find Open Buffers" })
+nnoremap("<leader><A-7>", require("telescope.builtin").lsp_document_symbols, { desc = "Find Document Symbols" })
 nnoremap("<leader>fb", require("telescope.builtin").buffers, { desc = "Find Open Buffers" })
 
 nnoremap("<leader>fh", require("telescope.builtin").help_tags, { desc = "Find Help" })
