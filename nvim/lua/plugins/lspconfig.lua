@@ -4,7 +4,20 @@ return {
     require 'lspconfig'.ocamllsp.setup {}
     require 'lspconfig'.pyright.setup {}
     require 'lspconfig'.rust_analyzer.setup {}
-    require 'lspconfig'.tsserver.setup {}
+    require 'lspconfig'.pylsp.setup {}
+    require 'lspconfig'.jsonls.setup {}
+    require 'lspconfig'.vuels.setup {}
+    require 'lspconfig'.biome.setup {}
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+    require 'lspconfig'.cssls.setup {
+      capabilities = capabilities
+    }
+    require 'lspconfig'.html.setup {
+      capabilities = capabilities
+    }
 
     require 'lspconfig'.lua_ls.setup {
       on_init = function(client)
@@ -53,7 +66,7 @@ return {
         nnoremap('gd', vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
         nnoremap('<F1>', vim.lsp.buf.hover, { buffer = ev.buf, desc = "Documentation hover" })
         nnoremap('gi', vim.lsp.buf.implementation, { buffer = ev.buf, desc = "Go to implementation" })
-        nnoremap('<C-k>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Show signature help" })
+        nnoremap('<M-p>', vim.lsp.buf.signature_help, { buffer = ev.buf, desc = "Show signature help" })
         nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, { buffer = ev.buf, desc = "Add workspace folder" })
         nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, { buffer = ev.buf, desc = "Remove workspace foler" })
         nnoremap('<space>wl', function()
@@ -63,7 +76,30 @@ return {
         nnoremap('<space>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename" })
         nnoremap('gr', vim.lsp.buf.references, { buffer = ev.buf, desc = "Go to reference" })
         nnoremap('<space>fc', function()
-          vim.lsp.buf.format { async = true }
+          vim.lsp.buf.format {
+            async = true,
+            filter = function(client)
+              local clients = vim.lsp.get_clients()
+              if #clients == 1 then
+                return true
+              end
+
+              local client_names = vim.tbl_map(function(clientA)
+                return clientA.config.name
+              end, clients)
+
+              local function contains_biome()
+                for _, name in ipairs(client_names) do
+                  if name == "biome" then
+                    return true
+                  end
+                end
+                return false
+              end
+
+              return client.name ~= "typescript-tools" and contains_biome()
+            end
+          }
         end, { buffer = ev.buf, desc = "Format Code" })
       end,
     })
