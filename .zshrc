@@ -76,6 +76,14 @@ listening() {
     fi
 }
 
+parseJwt() {
+    if [ $# -eq 1 ]; then
+        echo $1 | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
+    else
+        pbpaste | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
+    fi
+}
+
 # this loads sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
