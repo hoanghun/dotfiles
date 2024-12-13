@@ -6,6 +6,7 @@ return {
       "/",
       "?",
     },
+    enabled = false,
     dependencies = {
       "catppuccin/nvim",
     },
