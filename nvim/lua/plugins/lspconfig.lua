@@ -6,8 +6,18 @@ return {
     require 'lspconfig'.rust_analyzer.setup {}
     require 'lspconfig'.pylsp.setup {}
     require 'lspconfig'.jsonls.setup {}
-    require 'lspconfig'.vuels.setup {}
+    require 'lspconfig'.clojure_lsp.setup {}
     require 'lspconfig'.biome.setup {}
+
+    require 'lspconfig'.volar.setup {
+      filetypes = { 'vue' },
+      init_options = {
+        vue = {
+          -- disable hybrid mode
+          hybridMode = false,
+        },
+      },
+    }
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
