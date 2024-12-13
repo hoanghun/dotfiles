@@ -37,6 +37,7 @@ end, { desc = "[/] Fuzzily search in current buffer]" })
 nnoremap("<A-o>", function() require("telescope.builtin").find_files({ hidden = true }) end, { desc = "Find Files" })
 nnoremap("<leader>ff", function() require("telescope.builtin").find_files({ hidden = true }) end, { desc = "Find Files" })
 
+nnoremap("<A-9>", function() require("neogit").open() end)
 -- Center buffer while navigating
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-d>", "<C-d>zz")
