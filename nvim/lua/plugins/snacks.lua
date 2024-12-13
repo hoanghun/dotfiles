@@ -7,5 +7,9 @@ return {
         enabled = false,
       },
     },
+    notifier = {
+      enabled = true,
+      style = "fancy",
+    },
   }
 }
