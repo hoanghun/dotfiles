@@ -1,15 +1,15 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    require 'lspconfig'.ocamllsp.setup {}
-    require 'lspconfig'.pyright.setup {}
-    require 'lspconfig'.rust_analyzer.setup {}
-    require 'lspconfig'.pylsp.setup {}
-    require 'lspconfig'.jsonls.setup {}
-    require 'lspconfig'.clojure_lsp.setup {}
-    require 'lspconfig'.biome.setup {}
+    vim.lsp.config('ocamllsp', {})
+    vim.lsp.config('pyright', {})
+    vim.lsp.config('rust_analyzer', {})
+    vim.lsp.config('pylsp', {})
+    vim.lsp.config('jsonls', {})
+    vim.lsp.config('clojure_lsp', {})
+    -- vim.lsp.config('biome', {})
 
-    require 'lspconfig'.volar.setup {
+    vim.lsp.config('volar', {
       filetypes = { 'vue' },
       init_options = {
         vue = {
@@ -17,19 +17,24 @@ return {
           hybridMode = false,
         },
       },
-    }
+    })
+
+    vim.lsp.config('elixirls', {
+      cmd = { "/Users/hung/.config/nvim/lsp/elixir-ls-v0/language_server.sh" },
+    })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-    require 'lspconfig'.cssls.setup {
-      capabilities = capabilities
-    }
-    require 'lspconfig'.html.setup {
-      capabilities = capabilities
-    }
+    vim.lsp.config('cssls', {
+      capabilities = capabilities,
+    })
+    vim.lsp.config('html', {
+      capabilities = capabilities,
+      providerFormatter = true,
+    })
 
-    require 'lspconfig'.lua_ls.setup {
+    vim.lsp.config('lua_ls', {
       on_init = function(client)
         local path = client.workspace_folders[1].name
         if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
@@ -51,8 +56,22 @@ return {
             { settings = client.config.settings })
         end
         return true
-      end
-    }
+      end,
+    })
+
+    vim.lsp.enable({
+      'ocamllsp',
+      'pyright',
+      'rust_analyzer',
+      'pylsp',
+      'jsonls',
+      'clojure_lsp',
+      'volar',
+      'elixirls',
+      'cssls',
+      'html',
+      'lua_ls',
+    })
 
     -- Global mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
